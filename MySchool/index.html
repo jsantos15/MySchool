@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MySchool Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">MySchool</div>
+      <nav class="topnav" aria-label="Primary">
+        <button class="nav-btn active" data-page="dashboard">
+          <span class="icon">?</span> Dashboard
+        </button>
+        <button class="nav-btn" data-page="calendar">
+          <span class="icon">?</span> Calendar
+        </button>
+        <button class="nav-btn" data-page="curriculum">
+          <span class="icon">?</span> Curriculum
+        </button>
+        <button class="nav-btn" data-page="students">
+          <span class="icon">?</span> Students
+        </button>
+      </nav>
+      <div class="top-actions">
+        <button class="ghost-btn">?</button>
+        <button class="ghost-btn">?</button>
+      </div>
+    </header>
+
+    <main class="pages">
+      <section class="page active" id="dashboard">
+        <div class="dashboard-grid">
+          <aside class="panel students-panel">
+            <h2>Students</h2>
+            <ul class="student-list">
+              <li class="student-item active"><span class="avatar">A</span> Bianca</li>
+              <li class="student-item"><span class="avatar">B</span> Aylen</li>
+              <li class="student-item"><span class="avatar">C</span> Noah</li>
+            </ul>
+          </aside>
+
+          <section class="panel tasks-panel">
+            <h2>Today&apos;s Activities</h2>
+
+            <article class="subject-card math">
+              <h3>Math</h3>
+              <ul>
+                <li>Complete Math worksheet - Fractions</li>
+                <li>Practice multiplication tables</li>
+              </ul>
+            </article>
+
+            <article class="subject-card ela">
+              <h3>ELA</h3>
+              <ul>
+                <li>Read Chapter 5 of novel</li>
+                <li class="highlight">Write book summary</li>
+              </ul>
+            </article>
+
+            <article class="subject-card science">
+              <h3>Science</h3>
+              <ul>
+                <li>Read Chapter 5 of Science textbook</li>
+              </ul>
+            </article>
+
+            <article class="subject-card history">
+              <h3>Social Studies</h3>
+              <ul>
+                <li>Research colonial America project</li>
+              </ul>
+            </article>
+
+            <article class="subject-card coding">
+              <h3>Technology</h3>
+              <ul>
+                <li>Complete coding assignment</li>
+              </ul>
+            </article>
+
+            <div class="completed-card">
+              <h3>Completed 5</h3>
+              <ul>
+                <li>Solve geometry problems</li>
+                <li>Grammar exercise page #2</li>
+                <li>Complete lab report</li>
+                <li>Write history essay about colonial period</li>
+                <li>Memory verse practice</li>
+              </ul>
+            </div>
+
+            <button class="add-btn">+ Add activity</button>
+          </section>
+
+          <aside class="panel detail-panel">
+            <h2>Task Details</h2>
+            <ul class="detail-list">
+              <li>Write book summary</li>
+              <li class="link">+ Add sub-activity</li>
+              <li>Push activity</li>
+              <li>Attach file</li>
+            </ul>
+            <textarea placeholder="Add note"></textarea>
+            <button class="danger-btn">Delete activity</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="page" id="calendar">
+        <div class="page-card">
+          <h2>Weekly Calendar</h2>
+          <div class="calendar-grid">
+            <div class="day"><strong>Mon</strong><p>Math Quiz</p></div>
+            <div class="day"><strong>Tue</strong><p>Science Lab</p></div>
+            <div class="day"><strong>Wed</strong><p>Reading Checkpoint</p></div>
+            <div class="day"><strong>Thu</strong><p>History Project</p></div>
+            <div class="day"><strong>Fri</strong><p>Coding Challenge</p></div>
+            <div class="day"><strong>Sat</strong><p>Family Reading</p></div>
+            <div class="day"><strong>Sun</strong><p>Review + Prep</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="curriculum">
+        <div class="page-card">
+          <h2>Curriculum Tracker</h2>
+          <div class="progress-list">
+            <div class="progress-row"><span>Math</span><div class="bar"><i style="width:72%"></i></div><em>72%</em></div>
+            <div class="progress-row"><span>ELA</span><div class="bar"><i style="width:65%"></i></div><em>65%</em></div>
+            <div class="progress-row"><span>Science</span><div class="bar"><i style="width:51%"></i></div><em>51%</em></div>
+            <div class="progress-row"><span>Social Studies</span><div class="bar"><i style="width:46%"></i></div><em>46%</em></div>
+            <div class="progress-row"><span>Technology</span><div class="bar"><i style="width:84%"></i></div><em>84%</em></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="students">
+        <div class="page-card">
+          <h2>Student Profiles</h2>
+          <div class="student-cards">
+            <article>
+              <h3>Bianca</h3>
+              <p>Grade 5</p>
+              <small>Strong in reading, needs math fluency practice.</small>
+            </article>
+            <article>
+              <h3>Aylen</h3>
+              <p>Grade 4</p>
+              <small>Excellent curiosity in science and technology.</small>
+            </article>
+            <article>
+              <h3>Noah</h3>
+              <p>Grade 6</p>
+              <small>Steady progress across all subjects this semester.</small>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
