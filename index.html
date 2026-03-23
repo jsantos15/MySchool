@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MySchool Planner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">MySchool</div>
+      <nav class="topnav" aria-label="Primary">
+        <button class="nav-btn active" data-page="dashboard"><span class="icon">[D]</span> Dashboard</button>
+        <button class="nav-btn" data-page="calendar"><span class="icon">[C]</span> Calendar</button>
+        <button class="nav-btn" data-page="curriculum"><span class="icon">[R]</span> Curriculum</button>
+        <button class="nav-btn" data-page="students"><span class="icon">[S]</span> Students</button>
+      </nav>
+      <div class="top-actions">
+        <button class="ghost-btn" type="button" aria-label="Settings">Settings</button>
+      </div>
+    </header>
+
+    <main class="pages">
+      <section class="page active" id="dashboard">
+        <div class="dashboard-grid">
+          <aside class="panel students-panel">
+            <h2>Students</h2>
+            <ul class="student-list" id="dashboardStudentList"></ul>
+            <div class="pill-row">
+              <span class="pill" id="dashboardDatePill"></span>
+            </div>
+          </aside>
+
+          <section class="panel tasks-panel">
+            <h2 id="dashboardHeading">Today&apos;s Activities</h2>
+            <div id="subjectTaskGroups"></div>
+            <button class="add-btn" id="addActivityBtn" type="button">+ Add activity</button>
+          </section>
+
+          <aside class="panel detail-panel">
+            <h2>Task Details</h2>
+            <div id="taskDetailContent" class="detail-empty">Select an activity to view details.</div>
+            <label for="taskNote">Parent note</label>
+            <textarea id="taskNote" placeholder="Add note for this activity"></textarea>
+            <button class="add-btn" id="addSubtaskBtn" type="button">+ Add sub-activity</button>
+            <button class="danger-btn" id="deleteActivityBtn" type="button">Delete activity</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="page" id="calendar">
+        <div class="page-card">
+          <div class="calendar-header">
+            <h2>School Year Calendar</h2>
+            <div class="calendar-controls">
+              <button type="button" id="prevMonthBtn">Previous</button>
+              <span id="calendarMonthLabel"></span>
+              <button type="button" id="nextMonthBtn">Next</button>
+            </div>
+          </div>
+          <p class="calendar-subtitle">Weekdays only planning, aligned to a typical US public school year and no-school holidays.</p>
+          <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
+      </section>
+
+      <section class="page" id="curriculum">
+        <div class="page-card">
+          <h2>Curriculum By Student</h2>
+          <p class="calendar-subtitle">Aligned to common US public school frameworks (Common Core Math/ELA + NGSS-inspired science pacing).</p>
+          <div class="curriculum-grid" id="curriculumGrid"></div>
+        </div>
+      </section>
+
+      <section class="page" id="students">
+        <div class="page-card">
+          <h2>Students</h2>
+          <div class="students-layout">
+            <div>
+              <h3>Student Overview</h3>
+              <div class="student-cards" id="studentCards"></div>
+            </div>
+            <div class="student-form-wrap">
+              <h3>Add New Student</h3>
+              <form id="addStudentForm">
+                <label for="studentName">Name</label>
+                <input id="studentName" name="studentName" required />
+                <label for="studentGrade">Grade</label>
+                <select id="studentGrade" name="studentGrade">
+                  <option value="2">2nd grade</option>
+                  <option value="3">3rd grade</option>
+                  <option value="4">4th grade</option>
+                  <option value="5">5th grade</option>
+                </select>
+                <label for="studentFocus">Learning focus</label>
+                <textarea id="studentFocus" name="studentFocus" placeholder="Reading fluency, math confidence, etc."></textarea>
+                <button type="submit">Add student</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

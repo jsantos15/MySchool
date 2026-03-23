@@ -1,0 +1,3 @@
+# MySchool
+
+Starter project scaffold.
